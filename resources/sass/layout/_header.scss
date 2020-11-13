@@ -1,0 +1,42 @@
+.header {
+    position: relative;
+    height: 80vh;
+    // padding-bottom: 10rem;
+
+    &__box {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        
+
+        &-logo {
+            
+        }
+
+        &-text {
+            margin-top: 5rem;
+        }
+    }
+
+    .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 1;
+        overflow: hidden;
+    
+        // Sledece radimo da nam video na izlazi iz sekcije
+        &__content {
+            height: 100%;
+            width: 100%;
+            //zbog proporcija video nece nam zauzeti celu sekciju pa koristimo object-fit da resimo i to
+            object-fit: cover;
+            object-position: right;
+        }
+    }
+}

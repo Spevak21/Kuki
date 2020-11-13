@@ -1,0 +1,112 @@
+.ecology-box {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+
+        &-counter {
+            // display: flex;
+            // justify-content: center;
+            height: 35rem;
+            // background-color: red;
+
+            p {
+                position: relative;
+                text-align: center;
+                color: $color-white;
+                text-shadow:  0 .3rem .3rem rgba($color-black, .6);
+                z-index: 200;
+
+                span {
+                    font-size: 4rem;
+                    vertical-align: middle;
+                }
+            }
+
+            p:nth-of-type(1) {
+                font-size: 5rem;
+                margin: 2rem 0;
+            }
+            p:nth-of-type(2) {
+                font-size: 2.5rem;
+                padding: 0 20rem;
+            }
+
+            .counter {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                height: 40%;
+                width: 62rem;
+                margin: 0 auto;
+                z-index: 3;
+                // background-color: purple;
+
+                &__number {
+                    position: relative;
+                    height: 100%;
+                    width: 19.35%;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    background-color: $color-white;
+                    box-shadow: 0 .5rem .8rem rgba($color-black, .4);
+                    transition: all 2s;
+                    
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transition: top 2s;
+                        // transform: translateY(-20%);
+                    }
+                }
+            }
+        }
+
+        &-trees {
+            display: flex;
+            justify-content: space-between;
+
+            height: 35rem;
+            // background-color: orange;
+            
+
+            .tree {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                height: 100%;
+                width: 10%;
+                overflow: hidden;
+                z-index: 10;
+                // background-color: blue;
+                // border: 1px solid yellow;
+
+                &__wrap {
+                    display: flex;
+                    justify-content: center;
+                    // background-color: teal;
+                    
+                    &.tree-squish {
+                        animation: treeSquish 1s ease-out 1s;
+                        animation-fill-mode: forwards;
+                        transform-origin: bottom center;
+                    }
+    
+                    img {
+                        height: auto;
+                        width: 93%;
+                        transform: translateY(100%);
+    
+                        &.tree-pop {
+                            animation: treePop 1s ease-in;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

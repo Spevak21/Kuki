@@ -1,0 +1,186 @@
+.container-navigation {
+    position: fixed;
+    top: -12rem;
+    left: 0;
+    height: 10rem;
+    width: 100vw;
+    box-shadow: 0 .3rem .6rem rgba($color-black, .3);
+    z-index: 2000;
+    transition: top 1s;
+
+    &.slide-down {
+        top: 0;
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color-grey-dark-3, .7);
+        backdrop-filter: blur(2px);
+    }
+
+    .nav-logo {
+        position: absolute;
+        top: 1.5rem;
+        left: 3rem;
+        height: 7rem;
+        // background-color: red;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    
+        position: fixed;
+        top: 1.5rem;
+        right: 2rem;
+        z-index: 1000;
+    
+        // background-color: teal;
+    
+        &__icon {
+            position: relative;
+            height: 7rem;
+            transition: all 2s cubic-bezier(0.65, 0, 0.35, 1);
+            cursor: pointer;
+            z-index: 1002;
+    
+            &-shadow {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                height: 6rem;
+                width: 6rem;
+                border-radius: 50%;
+                background-image: linear-gradient(to right bottom, $color-logo-4, $color-logo-5);
+                box-shadow: .3rem .5rem 1rem rgba($color-black, .4);
+                z-index: 1001;
+            }
+
+            &.rotate-right {
+                transform: rotate(2turn);
+            }
+
+            &--to-top, &--cart {
+                position: relative;
+                height: 100%;
+                cursor: pointer;
+                z-index: 2000;
+            }
+        }
+    
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+    
+            list-style: none;
+            width: 65rem;
+            transition: width 2s cubic-bezier(0.65, 0, 0.35, 1);
+            overflow: hidden;
+    
+            // background-color: darken(teal, 3%);
+    
+            &.collapse {
+                width: 0;
+            }
+        }
+    
+        &__item {
+            padding: 0 2rem;
+            border-radius: 2rem;
+            transition: all 2s;
+            // background-color: darken(teal, 6%);
+    
+            &:not(:last-child) {
+                margin-right: .5rem;
+            }
+    
+            &.active-item {
+                background: linear-gradient(to right, $color-logo-1, $color-logo-2);
+                box-shadow: inset 3px 3px 3px hsla(0, 0, 100%, .25), inset -3px -3px 3px rgba($color-black, .25);
+                border-radius: 2rem;
+            }
+        }
+    
+        &__link:link,
+        &__link:visited {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: $color-logo-1;
+            
+            transition: all .5s;
+    
+            &:hover:not(.active-link) {
+                // border-bottom: 2px solid $color-2-2;
+                color: $color-white;
+                transform: translateY(-.2rem);
+                text-shadow: 0 .3rem .4rem rgba($color-black, .7);
+            }
+    
+            &.active-link{
+                color: $color-logo-7;
+            }
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            height: 7rem;
+
+            &.pop-icon {
+                animation: popIcon .75s;
+                animation-fill-mode: forwards;
+            }
+
+            &.to-bottom {
+                animation: toBottom .5s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        .to-cart {
+            display: block;
+            visibility: hidden;
+            position: fixed;
+            top: 10rem;
+            right: 2rem;
+            height: 7rem;
+            // background-color: salmon;
+
+            &.pop-icon {
+                animation: popIcon .75s;
+                animation-fill-mode: forwards;
+            }
+
+            &.shake-icon {
+                animation: shakeIcon 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .notification {
+                display: block;
+                visibility: hidden;
+                // visibility: visible;
+                position: absolute;
+                top: 0rem;
+                right: 0rem;
+                height: 2rem;
+                width: 2rem;
+                border-radius: 10rem;
+                box-shadow: 3px 3px 5px rgba($color-black, .5);
+                z-index: 2500;
+                background-color: $color-green-1;
+            }
+        }
+    }
+}
+

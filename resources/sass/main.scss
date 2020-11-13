@@ -1,0 +1,24 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/animations';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'components/about-box';
+@import 'components/bakery-box';
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/cart';
+// @import 'components/cart-form';
+@import 'components/ecology-box';
+@import 'components/footer-form';
+@import 'components/packaging-box';
+
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/navigation';
+
+@import 'pages/home';

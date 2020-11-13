@@ -1,0 +1,164 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    // height: 50rem;
+    // background-image: linear-gradient(to right bottom, $color-grey-dark-3, $color-grey-dark-4);
+    background-image: linear-gradient(to right bottom,
+                        rgba($color-logo-7, .9),
+                        rgba($color-logo-8, .9));
+    padding: 3rem 8rem;
+
+    &__contacts {
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 3rem;
+        border-bottom: 2px solid $color-logo-3;
+        // background-color: red;
+        .contact {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 30%;
+            padding: 1rem;
+            // background-color: blue;
+
+            img {
+                position: relative;
+                height: 10rem;
+                // background-color: pink;
+                margin-bottom: 1rem;
+                z-index: 1002;
+
+                &.shake-icon {
+                    animation: shakeIcon 1s;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+                text-align: center;
+                color: $color-logo-1;
+                // background-color: purple;
+            }
+        }
+    }
+
+    &__icon-shadow {
+        position: absolute;
+        top: 1.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 8.5rem;
+        width: 8.5rem;
+        border-radius: 50%;
+        background-image: linear-gradient(to right bottom, $color-logo-4, $color-logo-5);
+        box-shadow: .5rem .8rem 1rem rgba($color-black, .6);
+        z-index: 1001;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;       
+        padding: 1rem;
+        border-top: 3px solid $color-logo-8;
+        // background-color: greenyellow;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid $color-logo-3;
+        }
+    }
+
+    .heading-tertiary {
+        color: $color-logo-1;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        width: 50%;
+        min-width: 50rem;
+        padding: 2rem;
+        // background-color: green;
+    }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+        width: 5rem;
+        // background: $color-1;
+        // border: 3px solid $color-1;
+        border-radius: 50%;
+        transition: all .5s;
+
+        &:nth-of-type(1) {
+            background:linear-gradient(to top, #3b5998 0%, #eddcc8 50%);
+            background-size: auto 300%;
+            background-position: center top;
+            
+            &:hover {
+                background-position: center bottom;
+            }
+        }
+
+        &:nth-of-type(2) {
+            background:linear-gradient(to top, #1da1f2 0%, #eddcc8 50%);
+            background-size: auto 300%;
+            background-position: center top;
+            
+            &:hover {
+                background-position: center bottom;
+            }
+        }
+
+        &:nth-of-type(3) {
+            background:linear-gradient(to top, #007bb6 0%, #eddcc8 50%);
+            background-size: auto 300%;
+            background-position: center top;
+            
+            &:hover {
+                background-position: center bottom;
+            }
+        }
+
+        &:nth-of-type(4) {
+            background: linear-gradient(to top, #feda77 0%, #e51804 8%, #9510b8 16%, #515bd4 24%, #eddcc8 50%);
+            background-size: auto 300%;
+            background-position: center top;
+            
+            &:hover {
+                background-position: center bottom;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+
+        a {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            // background-color: seagreen;
+        }
+
+        .icon {
+            position: absolute;
+            height: 84%;
+        }
+    }
+}

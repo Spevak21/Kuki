@@ -1,0 +1,303 @@
+.about__box {
+    display: flex;
+    padding: 4rem 0;
+    justify-content: center;
+
+    &:not(:last-child) {
+        border-bottom: 2px dashed $color-logo-1;
+    }
+
+    opacity: 0;
+        
+    &.from-bottom {
+        animation: fromBottom 1s;
+        animation-fill-mode: forwards;
+    }
+    // background-color: green;
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 50rem;
+        width: 70rem;
+        padding: 0 10rem;
+
+        color: $color-logo-4;
+        font-size: 2.6rem;
+        text-align: center;
+        
+        // background-color: yellow; 
+        & > h3 {
+            color: $color-logo-5;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50rem;
+        width: 70rem;
+        padding: 0 10rem;
+        // background-color: blue; 
+
+        .image-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            height: 50rem;
+            width: 50rem;
+            border-radius: 50%;
+            overflow: hidden;
+
+            // box-shadow: 5px 8px 3rem rgba($color-black, .5);
+            background-image: linear-gradient(to bottom right, $color-logo-3, $color-logo-4);
+
+            .grain {
+                position: absolute;
+                
+
+                &--1 {
+                    bottom: -3rem;
+                    left: -6rem;
+                    transform-origin: bottom;
+                    transform: rotate(-60deg);
+
+                    &.rotate-right {
+                        animation: rotateRight 3s ease-out;
+                        animation-fill-mode: forwards;
+                    }
+                }
+
+                &--2 {
+                    bottom: -3rem;
+                    right: -7rem;
+                    transform-origin: bottom;
+                    transform: rotate(60deg);
+
+                    &.rotate-left {
+                        animation: rotateLeft 3s ease-out;
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+
+            .grains-field {
+                
+            }
+
+            .milk-churn {
+                position: relative;
+                top: 1.2rem;
+                height: 75%;
+                width: auto;
+                z-index: 10;
+            }
+
+            .wood-board {
+                position: absolute;
+                top: 75%;
+                z-index: 3;
+            }
+
+            &__milk {
+                background-image: linear-gradient(357deg, rgb(238, 238, 238) 50%, $color-grey-dark-3 50%);
+                transition: all 3s;
+                background-size: 100% 200%;
+                height: 25rem;
+                width: 10rem;
+
+                position: absolute;
+                top: 16rem;
+                left: 25rem;
+                z-index: 5;
+
+                &.milk-fill {
+                    background-position: 0 -18rem;
+                }
+            }
+
+            .whole-cocoa {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                // background-color:red;
+
+                transform-origin: top left;
+                transform: rotate(90deg);
+
+                &.rotate-branch {
+                    animation: rotateBranch 3s ease-out;
+                    animation-fill-mode: both;
+                }
+
+                .cocoa-branch {
+                // position: absolute;
+
+                // height: auto;
+                width: 90%;
+                z-index: 10;
+                // background-color: blue;
+                }
+
+                .cocoa-fruit-1 {
+                    position: absolute;
+                    top: 29%;
+                    left: 16%;
+
+                    height: 50%;
+                    z-index: 11;
+
+                    transform-origin: 83% 6%;
+
+                    &.shake-fruit {
+                        animation: shakeFruit1 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+                }
+
+                .cocoa-fruit-2 {
+                    position: absolute;
+                    top: 35%;
+                    left: 30%;
+
+                    height: 85%;  
+                    width: 26%;
+                    z-index: 12;
+                    // background-color: orchid;
+
+                    transform-origin: 60% 0;
+                    transform: rotate(20deg);
+
+                    &.shake-fruit {
+                        animation: shakeFruit 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+
+                    .cocoa-fruit-open {
+                        position: absolute;
+                        // top: 35%;
+                        // left: 30%;
+    
+                        height: 100%;
+    
+                        z-index: 13;
+                        // background-color: yellow;
+                    }
+    
+                    .cocoa-fruit-cover {
+                        position: absolute;
+                        // top: 35%;
+                        // left: 30%;
+    
+                        height: 100%;
+                        opacity: 1;
+                        z-index: 14;
+                        // background-color: orangered;
+                        &.hide-cover {
+                            animation: hideCover 3s ease-out;
+                            animation-fill-mode: both;
+                        }
+                    }
+                }
+                .cocoa-fruit-3 {
+                    position: absolute;
+                    top: 29%;
+                    left: 52%;
+
+                    height: 70%;
+                    z-index: 11;
+
+                    transform-origin: 18% 4%;
+
+                    &.shake-fruit {
+                        animation: shakeFruit 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+                }
+                .cocoa-leaf-1 {
+                    position: absolute;
+                    top: 19%;
+                    left: 21%;
+
+                    height: 40%;
+                    z-index: 15;
+
+                    transform-origin: 40% 0;
+
+                    &.shake-leaf {
+                        animation: shakeLeaf 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+                }
+                .cocoa-leaf-2 {
+                    position: absolute;
+                    top: 25%;
+                    left: 49%;
+
+                    height: 28%;
+                    z-index: 15;
+
+                    transform-origin: left top;
+
+                    &.shake-leaf {
+                        animation: shakeLeaf 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+                }
+                .cocoa-leaf-3 {
+                    position: absolute;
+                    top: 17%;
+                    left: 70%;
+
+                    height: 60%;
+                    z-index: 15;
+
+                    transform-origin: left top;
+
+                    &.shake-leaf {
+                        animation: shakeLeaf 3s ease-out;
+                        animation-fill-mode: both;
+                    }
+                }
+
+                // .test {
+                //     position: absolute;
+                //     top: 24%;
+                //     left: 49%;
+
+                //     height: 82px;
+                //     width: 70px;
+                //     background-color: rgba(greenyellow, .2);
+                //     z-index: 12;
+
+                //     .test2 {
+                //         position: absolute;
+                //         top: 0%;
+                //         left: 40%;
+                //         height: 5px;
+                //         width: 5px;
+                //         background-color: red;
+                //         z-index: 13;
+                //     }
+                // }
+            }
+
+            .cocoa-leaves {
+                position: absolute;
+            }
+        }
+    }
+}

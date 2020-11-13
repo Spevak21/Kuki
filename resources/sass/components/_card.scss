@@ -1,0 +1,320 @@
+.container-card {
+    display: flex;
+    justify-content: space-evenly;
+
+    .card {
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        position: relative;
+        height: 54rem;
+        width: 40rem;
+        min-width: 30rem;
+        opacity: 0;
+        transition: margin 1s;
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+        
+        &:hover {
+            margin-top: -1rem;
+        }
+        
+        &.from-bottom {
+            animation: fromBottom 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .hide-front {
+            transform: rotateY(-180deg);
+        }
+        .show-back {
+            transform: rotateY(0);
+        }
+
+        &__side {
+            height: 100%;
+            transition: all .8s ease;
+            border-radius: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            backface-visibility: hidden;
+            text-align: center;
+            overflow: hidden;
+    
+            box-shadow: .5rem 1rem 4rem rgba($color-3, .8);
+            border-bottom: 2px solid $color-3;
+            border-right: 2px solid $color-3;
+            
+            &--front {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: center;
+                background-color: $color-1;
+    
+                .card {
+                    &__bg {
+                        position: relative;
+                        background-size: cover;
+                        height: 15rem;
+                        width: 100%;
+            
+                        &--1 {
+                            background-image: url(../../resources/img/card-bg.png);
+                        }
+            
+                        &--2 {
+                            background-image: url(../../resources/img/card-bg-blue.png);
+                        }
+            
+                        &--3 {
+                            background-image: url(../../resources/img/card-bg-raisin.png);
+                        }
+                    }
+    
+                    &__icon {
+                        display: inline-block;
+                        height: 13rem;
+                        width: 13rem;
+                        border-radius: 50%;
+                        background-color: lighten($color-1, 10%);
+                        box-shadow: 0 1rem 2rem rgba($color-3, .2);
+    
+                        position: relative;
+                        top: 5rem;
+                
+                        img {
+                            display: inline-block;
+                            margin-top: 1.5rem;
+                            height: 10rem;
+                            width: 10rem;
+                        }
+                    }
+    
+                    &__info {
+                        font-size: 1.6rem;
+                        color: $color-4;
+                        width: 80%;
+                        margin: 0 auto;
+                
+                        > * {
+                            padding: .5rem 0;
+                
+                            &:not(:last-of-type) {
+                                border-bottom: 1px solid rgba($color-4, .3);
+                            }
+                        }
+                    }
+    
+                    &__btns {
+                        position: absolute;
+                        bottom: 0;
+                        height: 32%;
+                        width: 100%;
+                        padding: 1.2rem 0;
+                        background-color: darken($color-1, 5%);
+                
+                        p {
+                            margin-bottom: .5rem;
+                            color: $color-3;
+                        }
+                    }
+    
+                    &__input {
+                        display: inline-block;
+                        width: 50%;
+                        background-color: $color-1-light;
+                        border-radius: 1rem;
+                        height: 5rem;
+                        vertical-align: middle;
+                        
+                        transition: all .5s;
+
+                        font-size: 2rem;
+                        font-family: inherit;
+                        color: $color-3-2;
+                        
+                        margin: 0 .5rem;
+                        border: none;
+                        
+                        text-align: center;
+                
+                        &::-webkit-input-placeholder {
+                            font-size: 1.5rem;
+                            color: $color-3;
+                        }
+                
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+                        &[type=number] {
+                            -moz-appearance: textfield;
+                        }
+                
+                        &:focus {
+                            outline: none;
+                
+                            &::-webkit-input-placeholder {
+                                color: transparent;
+                            }
+                        }
+    
+                        &.highlight {
+                            outline: 3px solid $color-error;
+                        }
+                    }
+                }
+            }
+    
+            &--back {
+                transform: rotateY(180deg);
+                background-size: cover;
+                position: relative;
+                padding-top: 2rem;
+    
+                &-1 {
+                    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../resources/img/chocolate-big.png);
+                }
+    
+                &-2 {
+                    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../resources/img/blueberry-big.png);
+                }
+    
+                &-3 {
+                    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../resources/img/raisins-big.png);
+                }
+    
+                .cookie__back {
+                    display: inline-block;
+                    height: 16rem;
+                    width: 16rem;
+                    transition: all .5s;
+    
+                    opacity: 1;
+                    visibility: visible;
+    
+                    &.hide {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+                
+                .card__summary {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 63%;
+                    width: 100%;
+                    text-align: center;
+                    background-color: rgba($color-black, .4);
+                    
+    
+                    &-order {
+                        display: inline-block;
+                        position: absolute;
+                        left: 3.5rem;
+                        color: $color-1;
+                        font-size: 2.4rem;
+                        width: 80%;
+                        transition: all .5s cubic-bezier(0.36, 0, 0.66, -0.56);
+                        
+                        span {
+                            font-size: 2.7rem;
+                        }
+    
+                        p {
+                            padding: 1rem;
+                
+                            &:not(:last-of-type) {
+                                border-bottom: 1px solid rgba($color-3, .5);
+                            }
+    
+                            &:first-of-type {
+                                color: $color-2;
+                            }
+                        }
+    
+                        &.dis-to-right {
+                            transform: translateX(31rem);
+                            opacity: 0;
+                        }
+                    }
+    
+                    &-message {
+                        display: inline-block;
+                        color: $color-1;
+                        font-size: 3rem;
+                        width: 80%;
+                        position: absolute;
+                        top: 13rem;
+                        left: 3.5rem;
+                        transition: all .5s .5s;
+    
+                        opacity: 0;
+                        visibility: hidden;
+    
+                        &.show {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+    
+                    &-done {
+                        position: relative;
+                        text-align: center;
+                        margin-top: -20rem;
+    
+                        .checked {
+                            font-size: 20rem;
+                            font-weight: 900;
+                            line-height: 20rem;
+                            
+                            display: inline-block;
+                            background-size: 200%;
+                            background-position: 100%;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            color: transparent;
+    
+                            transition: all .4s;
+    
+                            &--1 {
+                                background-image: linear-gradient(to right, $color-1 50%, transparent 50%);
+                            }
+    
+                            &--2 {
+                                background-image: linear-gradient(to right, lighten($color-7, 40%) 50%, transparent 50%);
+                            }
+    
+                            &--3 {
+                                background-image: linear-gradient(to right, lighten($color-10, 50%) 50%, transparent 50%);
+                            }
+    
+                            &-on {
+                                background-position: 0%;
+                            }
+                        }
+                    }
+                }    
+    
+            }
+        }
+    
+        &:hover &__side {
+            margin-top: -1rem;;
+        }
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
